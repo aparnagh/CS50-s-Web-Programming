@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Google Advanced Search</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div class="search_header">
+      <img
+        width="80"
+        src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png"
+        alt="Google logo"
+      />
+      <a href="index.html"> Google Search </a>
+      <a href="images.html"> Google Image Search </a>
+    </div>
+    <div class="appbar">
+      <span> Advanced Search </span>
+    </div>
+    <div id="adv_form">
+      <div>
+        <span id="title">Find pages with...</span>
+        <div id="gap"></div>
+        <span id="title_help">To do this in the search box.</span>
+      </div>
+      <br/>
+      <br/>
+      <form action="https://www.google.com/search">
+        <div>
+          <label> all these words:</label>
+          <input type="text" name="as_q" />
+          <span class="ex1">Type the important words:</span>
+          <span class="ex2">tri-color rat terrier</span>
+        </div>
+        <div>
+          <label>this exact word or phrase:</label>
+          <input type="text" name="as_epq" />
+          <span class="ex1">Put exact words in quotes:</span>
+          <span class="ex2">"rat terrier"</span>
+        </div>
+        <div>
+          <label>any of these words:</label>
+          <input type="text" name="as_oq" />
+
+          <span class="ex1">Type OR between all the words you want:</span>
+          <span class="ex2"> miniature OR standard </span>
+        </div>
+        <div>
+          <label>none of these words:</label>
+          <input type="text" name="as_eq" />
+          <span class="ex1">Put a minus sign just before words that you don't want:</span>
+          <span class="ex2"> -rodent, -"Jack Russell"</span>
+        </div>
+        <input type="submit" value="Advanced Search" />
+      </form>
+    </div>
+    <div class="thefoots">
+      <div id="ftr_1" class="footer">
+        <span> United States of America </span>
+      </div>
+      <div class="footer">
+        <a>Help</a>
+        <a>Privacy</a>
+        <a>Terms</a>
+      </div>
+    </div>
+  </body>
+</html>

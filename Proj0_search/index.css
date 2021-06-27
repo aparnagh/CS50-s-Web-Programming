@@ -1,0 +1,247 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  cursor: pointer;
+}
+
+.appbar {
+  font-size: 20px;
+  color: #d93025;
+  padding: 25px 35px;
+  border-bottom: 1px solid #dadce0;
+}
+.appbar span {
+  margin: 0px 0px 0px 10px;
+}
+
+.search_header {
+  text-align: right;
+  padding-top: 15px;
+  padding-right: 15px;
+  width: auto;
+  height: 70px;
+}
+.search_header a {
+  margin: 10px;
+  text-decoration: none;
+  color: #3c4043;
+  font-size: 14px;
+  display: inline-block;
+}
+.search_header img {
+  float: left;
+  padding-left: 20px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search_container, .search_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#search_container #submit_btns, .search_box #submit_btns {
+  padding-top: 18px;
+  text-align: center;
+}
+#search_container input[type=submit], .search_box input[type=submit] {
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0px 16px;
+  height: 36px;
+  background-color: #f8f9fa;
+  color: #3c4043;
+  min-width: 54px;
+  cursor: pointer;
+  border: none;
+}
+#search_container input[type=submit]:hover, .search_box input[type=submit]:hover {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+#search_container #logo, .search_box #logo {
+  position: relative;
+  left: 115px;
+  top: -50px;
+  color: #4c8bf5;
+}
+
+#icon, #icon_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  margin-left: 15px;
+  color: #d9d9d9;
+}
+
+#icon_search {
+  align-items: flex-end;
+  color: #4c8bf5;
+  padding-right: 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.hidden_btn {
+  border: none;
+  background: none;
+}
+
+.search_box {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0px;
+  border-style: solid;
+  border-width: thin;
+  border-color: #d9d9d9;
+  border-radius: 25px;
+  width: 600px;
+}
+.search_box:hover {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0px 1px 2px 1px rgba(127, 127, 127, 0.2);
+}
+.search_box input[type=text] {
+  border-radius: 25px;
+  border: none;
+  width: 550px;
+  padding: 12px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.search_box input[type=text]:focus {
+  outline: none;
+}
+
+.thefoots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.thefoots a {
+  padding-right: 15px;
+}
+
+.footer, #ftr_1 {
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.54);
+  width: auto;
+  font-size: 15px;
+  padding: 15px 30px;
+}
+
+#ftr_1 {
+  border-bottom: 1px solid #dadce0;
+}
+
+.a_left {
+  float: right;
+}
+
+#adv_form {
+  margin: 45px;
+  font-size: 13px;
+  display: block;
+  width: 90%;
+}
+#adv_form #title {
+  font-size: 16px;
+  color: #333333;
+  float: left !important;
+  min-width: 167px;
+}
+#adv_form #title_help {
+  color: #777777;
+  font-weight: bold;
+  padding-left: 15px;
+}
+#adv_form #gap {
+  display: inline-block;
+  width: 600px;
+}
+#adv_form span {
+  font-size: 11px;
+  color: #555555;
+  justify-content: baseline;
+}
+#adv_form .ex1 {
+  padding-left: 10px;
+}
+#adv_form .ex2 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: lighter;
+}
+#adv_form form > div {
+  padding-bottom: 20px;
+}
+#adv_form label {
+  display: inline-block;
+  color: #222222;
+  min-width: 167px;
+}
+#adv_form input[type=text] {
+  height: 25px;
+  border: 1px solid #d9d9d9;
+  padding-left: 8px;
+  cursor: text;
+  width: 600px;
+}
+#adv_form input[type=text]:focus {
+  outline: none;
+  border-color: #4c8bf5;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 1px 0px inset;
+}
+#adv_form input[type=submit] {
+  background-color: #4d90fe;
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  border-width: thin;
+  border-color: #3079ed;
+  border-radius: 2px;
+  margin-left: 664px;
+  height: 30px;
+  padding: 0px 12px;
+}
+#adv_form input[type=submit]:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/**
+.search_box {
+  height: 38px;
+  width: 450px;
+  display: block;
+
+  &:hover {
+    border-radius: $input_border_radius;
+    background: grey;
+    border: solid 0.7 rgba(grey, 0.7);
+  }
+
+  input[type="text"] {
+    width: 400px;
+    border-radius: $input_border_radius;
+    border: 1px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+**/
+
+/*# sourceMappingURL=index.css.map */
