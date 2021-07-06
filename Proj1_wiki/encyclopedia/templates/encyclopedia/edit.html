@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit a Page
+{% endblock %}
+
+{% block body %}
+{% if error_msg %} 
+<div class="error_box">
+    {{ error_msg }}
+</div>
+{% endif %}
+
+<h1> Edit a Page </h1>
+<p> Fill in the  to edit the {{ title }} page: </p>
+
+<form action="{% url 'edit' title=title %}" method="post">
+    {% csrf_token %}
+    {{ edit_form }}
+
+    <input type="submit" value="Save Page">
+</form>
+{% endblock %}
