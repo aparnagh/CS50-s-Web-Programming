@@ -1,0 +1,249 @@
+body {
+    padding: 20px;
+    display: block;
+}
+
+#not_signed_in {
+    background-color: #dbf3fa;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.circle {
+    border-radius: 50%;
+    padding: 8px;
+    background: #fff;
+    background-color: #e4e7eb;
+    color: #000;
+    text-align: center;
+    display: inline;
+  }
+
+.success_msg {
+    background-color: #cce7cd;
+    width: 100%;
+    color:#767676;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.error_msg {
+    background-color: #fac6bf;
+    width: 100%;
+    color: #767676;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+h6 {
+    color: #767676;
+}
+
+@media (min-width: 950px) {
+.grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 15px 5px;
+}
+.image_bid {
+    float: left;
+    height: 400px;
+    padding-right: 20px
+}
+.image_bid > img {
+    object-fit:contain;
+    height:400px;
+    float: inline-start
+}
+.card_img > img
+{
+    max-width: 300px;
+    max-height: 300px;
+    padding: 10px
+}
+.bid_card {
+    width: 30%;
+    padding: 5px 10px 10px 10px;
+    margin: 10px 30px 30px 30px;
+    border-width: medium;
+    background-color: white !important;
+}
+}
+@media (max-width: 950px) {
+    .grid {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 15px 15px;
+    }
+    .image_bid {
+        float: left;
+        height: 300px;
+        padding-right: 20px
+    }
+    .image_bid > img {
+        object-fit:contain;
+        height:300px;
+        float: inline-start
+    }
+    .card_img > img
+{
+    max-width: 300px;
+    max-height: 300px;
+    padding: 10px;
+}
+.bid_card {
+    width: 77%;
+    padding: 5px 10px 10px 10px;
+    margin: 20px 30px 10px 0px;
+    border-width: medium;
+    background-color: white !important;
+}
+
+    }
+.card {
+    color: inherit;
+    background-color: #e4e7eb;
+}
+.card:hover {
+    text-decoration: none;
+    color: inherit;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+@media (min-width: 900px) {
+    .category_grid {
+        display: grid;
+        margin: 100px;
+        margin-top: 25px !important;
+        grid-template-columns: 50% 50%;
+        grid-gap: 15px 15px;
+    }
+    }
+    @media (max-width: 899px) {
+        .category_grid {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-gap: 15px 15px;
+        }
+        }
+
+.details {
+    padding: 10px 10px 10px 10px;
+}
+#descp {
+    font-style: italic;
+}
+#price {
+    color: #767676 !important;
+}
+.card_img {
+    background-color: white !important;
+}
+
+
+label {
+    display: block;
+    font-weight: 425;
+}
+
+.descp {
+    border: 2px solid #d9d9d9;
+    padding-left: 8px;
+    cursor:text;
+    font-weight: 200;
+    height: 100px;
+}
+
+.field {
+    width: 300px;
+    border: 2px solid #d9d9d9;
+    padding-left: 8px;
+    cursor:text;
+    font-weight: 200;
+}
+.field:focus,.numfield:focus,.descp:focus {
+    outline: none;
+    border-color: #4c8bf5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 1px 0px inset;
+}
+
+.numfield {
+    width: 100px;
+    border: 2px solid #d9d9d9;
+    padding-left: 8px;
+    cursor:text;
+    font-weight: 200;
+}
+
+input[type="submit"] {
+    background-color: #4d90fe;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    border-width: thin;
+    border-color: #3079ed;
+    border-radius: 4px;
+    height: 30px;
+    padding: 0px 12px;
+
+}
+
+input[type="submit"]:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#bid_container {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.details_bid {
+    overflow: hidden;
+    word-wrap: break-word;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    width: 40%;
+}
+
+.details_bid > div {
+    padding-bottom: 5px;
+}
+
+.bid-btn {
+    width: 67%;
+    font-weight: bold;
+    margin: 18px 30px 0px 18px;
+}
+
+
+.bid_card > h6 {
+    color: inherit;
+    text-align: center;
+}
+
+.bid_card > span {
+    size: 10px;
+    font-style: oblique;
+    text-align: center;
+}
+
+.adv_details {
+    background-color: #e4e7eb;
+    padding: 10px 5px 10px 15px;
+    margin-top: 20px;
+}
+.comments {
+    padding: 25px 5px 10px 5px;
+}
+.comment {
+    padding: 2px 5px 10px 5px;
+    width: 60%;
+}

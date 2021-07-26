@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<h2> Create a New Listing </h2>
+<h6> Fill out the form below: </h6>
+<br />
+{% if error %}
+    <div>
+        {{ error }}
+    </div>
+{% endif %}
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    {% for field in listing_form %}
+    <div>
+        <label> {{field.label}}:</label>
+    {{ field }}
+    </div>
+    {% endfor %}
+    <br />
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

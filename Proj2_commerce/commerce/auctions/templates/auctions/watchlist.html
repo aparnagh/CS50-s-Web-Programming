@@ -1,0 +1,38 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h3> My Watchlist </h3>
+
+<div class="grid">
+    {% for item in watchlist %}
+    <a href="{% url 'listing' listing_pk=item.pk %}" cursor="pointer" class="card">
+        <div>
+            <div class="card_img">
+                <img src="{{ item.photo }}">
+            </div>
+            <div class="details">
+                <div id="list_title">
+                    <h5> {{ item.title }} <i class="fa fa-star" style="color:#fabd02"></i></h5>
+                </div>
+                <div id="descp">
+                    <p> {{ item.description }} </p>
+                </div>
+                <div>
+                    {% if item.status %}
+                    <b style="color:green"> STATUS: OPEN</b>
+                    {% else %}
+                    <b style="color:red"> STATUS: CLOSED</b>
+                    {% endif %}
+                </div>
+                <div id="price">
+                    <p> Current Bid: ${% if item.highest_bid == None %}{{item.price}}{% else %}{{item.highest_bid.price}}{% endif %}</p>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% empty %}
+</div>
+<br />
+<h6> There are no items on your watchlist</h6>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if messages %}
+{% for message in messages %}
+<div class="{{message.level_tag}}_msg"> {{ message }} </div>
+{% endfor %}
+{% endif %}
+
+{% if not user.is_authenticated %}
+<div id="not_signed_in">
+    Please sign in to participate in auction
+</div>
+{% endif %}
+
+<h3> {{ listing.title }} </h3>
+{% if user.is_authenticated %}
+<br />
+<form action="{% url 'watchlist' listing_pk=listing.pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-primary" value="watchlist"><i class="fa fa-star-o"
+            aria-hidden="true"></i> {{watchlist_msg}}</button>
+</form>
+{% endif %}
+
+<div id="bid_container">
+    <div class="image_bid">
+        <img src="{{ listing.photo }}" class="image_bid">
+    </div>
+    <div class="details_bid">
+        <div>
+            <b> Item: </b> <span> {{ listing.title }}</span>
+        </div>
+        <div>
+            <b> Description: </b> <span> {{ listing.description }} </span>
+        </div>
+        <div>
+            <b> Starting Price: </b> <span> ${{listing.price}}</span>
+        </div>
+        <div>
+            <b> Current Bid </b> <span> {% if listing.highest_bid == None %} - {% else %}
+            ${{listing.highest_bid.price}} (by {{listing.highest_bid.user.username}}){% endif %}</span>
+        </div>
+
+        <form action="{% url 'close_bid' listing_pk=listing.pk %}" method="post" id="closeBid">
+            {% csrf_token %}
+            {% if status and user.username == listing.seller.username %}
+            <button type="submit" class="btn btn-danger btn-sm bid-btn" value="close_bid"> Close Bid </button>
+            {% elif status == False %}
+            <br />
+            <br />
+            {% if isWinner == False and listing.highest_bid is not None %}
+            <h5> Sold for ${{listing.highest_bid.price }} to {{ listing.highest_bid.user.username }} </h5>
+            {% elif isWinner == False and listing.highest_bid is None %}
+            <h5> Auction Closed. No bids were made for this item.</h5>
+            {% endif %}
+            {% if isWinner %}
+            <h5> You won this Bid! Sold for ${{listing.highest_bid.price }} </h5>
+            {% endif %}
+            {% endif %}
+        </form>
+
+    </div>
+    {% if user.is_authenticated and status%}
+    <div class="card bid_card">
+        <h6> Make a Bid! </h6>
+        <span> Place a bid higher than the starting price and current bid</span>
+        <br />
+        <form action="{% url 'listing' listing_pk=listing.pk %}" method="POST">
+            {% csrf_token %}
+            {{bid_form}}
+            <br />
+            <br />
+            <input type="submit" value="Place Bid">
+        </form>
+
+    </div>
+    {% endif %}
+</div>
+    <div id="detail_container">
+        <div class="adv_details">
+            <b> Created On: </b> <span> {{listing.time}} </span> <br />
+            <b> Listed By: </b> <span> {{listing.seller.username}} </span> <br />
+            <b> Category: </b> <span> {{listing.category|title}} </span> <br />
+            <b> Number of Bids: </b> <span> {{num_bids}}</span> <br />
+            <b> Status: </b> <span>{% if listing.status %} Open {% else %} Closed {% endif %}</span>
+        </div>
+        <div class="comments">
+            <h5> {% if comments %} Comments ({{comments|length}}): {% else %} Comments(0): {% endif %} </h5>
+            {% if comments %}
+            {% for cmt in comments %}
+            <div class="comment">
+                <i id="icon" class="fa fa-user"></i>
+                <b> {{cmt.user.username}}</b>
+                <p> {{cmt.comment}}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        {% if user.is_authenticated %}
+        <br />
+        <b> Add a Comment </b>
+        <form action="{% url 'comment' listing_pk=listing.pk %}" method="POST">
+            {% csrf_token %}
+            {% for field in comment_form %}
+            {{field}}
+            {% endfor %}
+            <br />
+            <br />
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+        {% endif %}
+    </div>
+    {% endblock %}
